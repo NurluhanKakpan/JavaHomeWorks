@@ -4,15 +4,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int a = input.nextInt();
-        System.out.println(Fib(a));
+        int n = input.nextInt();
+        System.out.println(power(a,n));
     }
-    public  static  int Fib(int a){
-        if(a==0){
-            return 0;
-        } else if (a==1) {
-            return 1;
+   public static int power(int a, int n){
+        int f = a;
+        if(n==1){
+            return a;
         }
-        return Fib(a-1) + Fib(a-2);
-    }
+        else return a*power(a,n-1);
+   }
 
 }
