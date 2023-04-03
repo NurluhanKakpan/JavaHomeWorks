@@ -3,27 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String word = input.next();
-        if (isAllDigits(word)){
-            System.out.println("Yes");
-        }
-        else {
-            System.out.println("No");
-        }
-
-
-
+        int a = input.nextInt();
+        int b = input.nextInt();
+        System.out.println(gcd(a,b));
     }
-    public static boolean isAllDigits(String s) {
-        if (s.isEmpty()) {
-            return true;
+    public static int gcd(int a,int b){
+        if(b == 0){
+            return a;
         }
-        if (Character.isDigit(s.charAt(0))) {
-            return isAllDigits(s.substring(1));
-        } else {
-            return false;
+        else{
+            return gcd(b,a%b);
         }
     }
-
-
 }
