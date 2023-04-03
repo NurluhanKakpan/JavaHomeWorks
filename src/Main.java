@@ -3,16 +3,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int a = input.nextInt();
-        int n = input.nextInt();
-        System.out.println(power(a,n));
-    }
-   public static int power(int a, int n){
-        int f = a;
-        if(n==1){
-            return a;
+        String word = input.next();
+        if (isAllDigits(word)){
+            System.out.println("Yes");
         }
-        else return a*power(a,n-1);
-   }
+        else {
+            System.out.println("No");
+        }
+
+
+
+    }
+    public static boolean isAllDigits(String s) {
+        if (s.isEmpty()) {
+            return true;
+        }
+        if (Character.isDigit(s.charAt(0))) {
+            return isAllDigits(s.substring(1));
+        } else {
+            return false;
+        }
+    }
+
 
 }
