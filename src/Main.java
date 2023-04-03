@@ -4,15 +4,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int a = input.nextInt();
-        int b = input.nextInt();
-        System.out.println(gcd(a,b));
+        if (isPrime(a,(int)(Math.sqrt(a)))){
+            System.out.println("Yes");
+        }
+        else {
+            System.out.println("No");
+        }
     }
-    public static int gcd(int a,int b){
-        if(b == 0){
-            return a;
+  public static boolean isPrime(int a,int i){
+        if(i <= 1){
+            return true;
+        } else if (a%i == 0) {
+            return false;
         }
-        else{
-            return gcd(b,a%b);
-        }
+        return isPrime(a,i-1);
     }
 }
