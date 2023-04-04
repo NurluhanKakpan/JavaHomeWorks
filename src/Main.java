@@ -1,22 +1,28 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int a = input.nextInt();
-        if (isPrime(a,(int)(Math.sqrt(a)))){
-            System.out.println("Yes");
+        int a = 4;
+        int[] arr = {1,4,6,2};
+        reverse(arr,0,arr.length-1);
+        for(int i = 0; i < arr.length; i++  ){
+            System.out.print(arr[i] + " ");
         }
-        else {
-            System.out.println("No");
-        }
+
     }
-  public static boolean isPrime(int a,int i){
-        if(i <= 1){
-            return true;
-        } else if (a%i == 0) {
-            return false;
-        }
-        return isPrime(a,i-1);
+    public static void reverse(int[] arr, int begin, int end  ){
+        int temp;
+            if(begin >=end){
+                return;
+            }
+           else{
+               temp = arr[begin];
+               arr[begin] = arr[end];
+               arr[end] = temp;
+               reverse(arr,begin+1,end-1);
+            }
     }
+
+
+
+
+
 }
