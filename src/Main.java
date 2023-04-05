@@ -4,7 +4,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
-        System.out.println(factorial(n));
+        int k = input.nextInt();
+        int fact_n = factorial(n);
+        int fact_k = factorial(k);
+        int s = factorial(n-k);
+        System.out.println(fact_n/(fact_k*s));
 
         
 
